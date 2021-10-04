@@ -16,9 +16,14 @@ var (
 )
 
 func ShopInfoSearchSync() {
+	if vars.ShopInfoSearchSyncTaskSetting != nil {
+		if vars.ShopInfoSearchSyncTaskSetting.SingleSyncNum > 0 {
+			pageSize = vars.ShopInfoSearchSyncTaskSetting.SingleSyncNum
+		}
+	}
 	count := 0
 	for {
-		if count > 2 {
+		if count > 5 {
 			break
 		}
 		count++
@@ -27,7 +32,7 @@ func ShopInfoSearchSync() {
 	}
 }
 
-const sqlSelectShopInfo = "*"
+const sqlSelectShopInfo = "shop_id,nick_name,full_name,shop_code,register_addr,business_addr,business_desc"
 
 func shopInfoSearchSync(pageSize, pageNum int) {
 	ctx := context.TODO()

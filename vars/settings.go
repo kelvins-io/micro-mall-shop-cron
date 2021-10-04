@@ -13,4 +13,5 @@ type EmailNoticeSettingS struct {
 
 type ShopInfoSearchSyncTaskSettingS struct {
 	Cron string
+	SingleSyncNum int
 }
