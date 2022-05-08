@@ -7,7 +7,6 @@ import (
 )
 
 var (
-	EmailNoticeSetting                   *EmailNoticeSettingS
 	EmailConfigSetting                   *EmailConfigSettingS
 	ShopInfoSearchSyncTaskSetting        *ShopInfoSearchSyncTaskSettingS
 	QueueAMQPSettingShopInfoSearchNotice *setting.QueueAMQPSettingS

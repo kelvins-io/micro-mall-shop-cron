@@ -8,7 +8,6 @@ import (
 
 const (
 	SectionEmailConfig       = "email-config"
-	SectionEmailNotice       = "email-notice"
 	ShopInfoSearchNotice     = "shop-info-search-notice"
 	ShopInfoSearchNoticeTask = "shop-info-search-notice-task"
 )
@@ -18,9 +17,6 @@ func LoadConfig() error {
 	// 邮箱
 	vars.EmailConfigSetting = new(vars.EmailConfigSettingS)
 	config.MapConfig(SectionEmailConfig, vars.EmailConfigSetting)
-
-	vars.EmailNoticeSetting = new(vars.EmailNoticeSettingS)
-	config.MapConfig(SectionEmailNotice, vars.EmailNoticeSetting)
 
 	vars.QueueAMQPSettingShopInfoSearchNotice = new(setting.QueueAMQPSettingS)
 	config.MapConfig(ShopInfoSearchNotice, vars.QueueAMQPSettingShopInfoSearchNotice)
