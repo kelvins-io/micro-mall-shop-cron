@@ -22,6 +22,9 @@ const maxRetrySendTimes = 3
 const retryIdleTime = 500 * time.Millisecond
 
 func SendEmailNotice(ctx context.Context, receivers, subject, msg string) error {
+	if receivers == "" {
+		return nil
+	}
 	one.Do(func() {
 		initVars()
 	})
